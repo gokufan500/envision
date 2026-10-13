@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lnag="en"></html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>3D Scan Demo</title>
+    <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      min-height: 100vh;
+  display: flex;
+  align-items; center;
+  justify-content: center;
+    }
+    </style>
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://unpkg.com/three@0.128.0/build/three.module.js",
+          "three/addons/": "https://unpkg.com/three@0.128.0/examples/jsm/"
+        }
+      }
+    </script>
+    <script type="module" defer>
+      
+import * as THREE from 'three';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+
+const main = () => {
+
+  const scene = new THREE.Scene();
+  scene.background = new THREE.Color(0x111111);
+
+  const camera = new THREE.PerspectiveCamera(
+    75, // fov  
+    window.innerWidth / window.innerHeight, // aspect ratio  
+    0.1, // near clipping plane  
+    1000 // far clipping plane
+  );
+
+  camera.position.set(0,0,5);
+
+  const renderer = new THREE.WebGLRenderer({ antialias: true });
+  renderer.setSize(window.innerWidth, window.innerHeight);
+  renderer.setPixelRatio(window.devicePixelRatio);
+  document.body.appendChild(renderer.domElement);
+
+// --- Create a Cube ---
+const geometry = new THREE.BoxGeometry(1.5, 1.5, 1.5);
+const material = new THREE.MeshStandardMaterial({ 
+  color: 0x44aa88,
+  roughness: 0.4,
+  metalness: 0.1,
+  emissive: new THREE.Color(0x112233)
+});
+const cube = new THREE.Mesh(geometry, material);
+scene.add(cube);
+
+// --- Add Lighting ---
+// Ambient light for base illumination
+const ambientLight = new THREE.AmbientLight(0x404060);
+scene.add(ambientLight);
+
+// Directional light for shading and depth
+const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
+directionalLight.position.set(3, 5, 2);
+scene.add(directionalLight);
+
+// Optional: a second light from another angle to reduce harsh shadows
+const fillLight = new THREE.PointLight(0x4466ff, 0.5);
+fillLight.position.set(-3, 1, 2);
+scene.add(fillLight);
+
+// --- Add a subtle grid helper for orientation (optional) ---
+const gridHelper = new THREE.GridHelper(10, 20, 0x888888, 0x444444);
+gridHelper.position.y = -1;
+scene.add(gridHelper);
+
+const controls = new OrbitControls(camera, renderer.domElement);
+controls.target.set(0, 0, 0); // Look at the cube
+controls.update();
+  // --- Animation Loop ---
+function animate() {
+  requestAnimationFrame(animate);
+  controls.update();
+  // Rotate the cube
+  cube.rotation.x += 0.005;
+  cube.rotation.y += 0.01;
+
+  renderer.render(scene, camera);
+}
+
+animate();
+
+// --- Handle Window Resize ---
+window.addEventListener('resize', onWindowResize, false);
+function onWindowResize() {
+  camera.aspect = window.innerWidth / window.innerHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize(window.innerWidth, window.innerHeight);
+}
+
+
+};
+
+main();
+    </script>
+  </head>
+  <body>
+  
+  </body>
+</html>
