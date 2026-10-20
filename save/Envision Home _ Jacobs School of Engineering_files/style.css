@@ -1,0 +1,402 @@
+/**
+ * @file
+ * Subtheme specific CSS.
+ */
+
+/* Please keep this as simple as possible. Less is more */
+
+/* Universal Styles */
+* {
+    font-family:Roboto;
+}
+#content a,footer a {
+  color: #005D92;
+  text-decoration: underline;
+}
+#content a:hover {
+  color: #003d61;
+  text-decoration: none;
+}
+#content a:focus {
+  color: #003d61;
+  outline: 2px solid #003d61;
+  outline-offset: 2px;
+}
+
+/* Header */
+#navbar-main img {
+    max-width:150px;
+    height:auto;
+}
+.region-top-header > div:last-child {
+    text-align:right;
+    padding:.5rem 0;
+    color:#FFF;
+}
+.region-top-header i {
+    color:#FFF;
+}
+
+
+/* Global styles - should be included in all themes */
+.img-responsive img {
+    width:100%;
+    height:auto;
+}
+/* END Global styles */
+
+.navbar-brand {
+    display:block; /* Places slogan on new line */
+    color:#191919;
+}
+.site-name-slogan {
+    color:#191919;
+}
+.no_pads {
+    margin-left:-15px;
+    margin-right:-15px;
+}
+.parallax_bg {
+    margin-left:-15px;
+    margin-right:-15px;
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
+}
+h1 {
+    font-weight:300;
+}
+h2 {
+    font-size:32px;
+    font-weight:300;
+}
+h3 {
+    font-size:24px;
+    font-weight:300;
+}
+
+.sidebar h2 {
+    font-size:32px;
+    border-bottom:none; /* Removing default style */
+}
+@media (min-width:768px) {
+    #navbar-main {
+        flex-flow:row wrap;
+        padding:0;
+    }
+    #navbar-main > .container {
+        flex-wrap:wrap;
+        padding-top:30px;
+        padding-bottom:30px;
+    }
+    #navbar-main img {
+        max-width:250px;
+    }
+    #navbar-main .navbar-collapse {
+        width:100%;
+    }
+    #navbar-main .nav-item {
+        display:inline-block;
+    }
+    #navbar-main .nav-item .nav-link {
+        color:#49a5d3;
+        font-weight:700;
+    }
+    #navbar-main .nav-item.dropdown .dropdown-menu {
+        text-align:left;
+    }
+    #navbar-main nav {
+        width:100%;
+        background-color:#FFF;
+        box-shadow:0px 1px 2px 0px rgba(0, 0, 0, 0.28);
+    }
+    .menu--navigation-envision .nav-item a {
+
+    }
+}
+
+@media (max-width:768px) {
+    .envision_video_logo img {
+        width:225px;
+    }
+    .page-node-97 #block-ucsandiegologowhite {
+        margin-left:0;
+    }
+}
+
+
+
+
+/* Homepage */
+.region-top-header {
+    width:100%;
+}
+.page-node-97 #block-ucsandiegologowhite {
+    margin-left:auto;
+}
+.page-node-97 .drupal_news_block {
+    margin-top:2rem;
+}
+.img_frame img {
+    width:100%;
+}
+.captioned_img {
+    color:#FFF;
+    position:relative;
+}
+.captioned_img a {
+    width:100%;
+    height:100%;
+    position:absolute;
+    top:0;
+    left:0;
+    z-index:2;
+}
+.captioned_img .caption {
+    position:absolute;
+    bottom:0;
+    background-color:rgba(0,0,0,.75);
+    width:100%;
+    padding:1.5rem 1rem;
+}
+#block-envisionnewslettersignupblock {
+    margin-left:auto;
+}
+#block-envisionnewslettersignupblock p {
+    margin:0;
+}
+.page-node-98 .parallax_bg {
+    background-image:url(/sites/default/files/groups/envision/sme.jpg);
+}
+#block-envisionhomepagevideo {
+    width:100%;
+}
+.envision_video_container {
+    overflow:hidden;
+    width:100%;
+    height:0;
+    padding-bottom:25%;
+    position:relative;
+}
+#envision_video {
+    position:absolute;
+    width:110%;
+    height:100%;
+}
+.envision_video_logo {
+    position:absolute;
+    width:100%;
+    height:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+.envision_video_logo img {
+    width:400px;
+    height:auto;
+}
+.page-node-97 .sidebar .block {
+    padding:0;
+    margin:0;
+}
+.instagram_gallery {
+    max-width:250px;
+}
+.instagram_gallery a img {
+    margin-bottom:15px !important;
+}
+
+
+
+
+
+/* Courses */
+.courses_list .row .row {
+
+}
+.courses_list .row .row span:first-child {
+    display:block;
+    width:25%;
+    padding:10px 15px;
+    text-align:right;
+    font-weight:700;
+}
+.courses_list .row .row span:last-child {
+    display:block;
+    width:auto;
+    padding:10px 15px;
+    width:100%;
+}
+.courses_list .row .row a {
+    width:100%;
+    display:flex;
+    flex-direction:row;
+    color:#000;
+    text-decoration:none;
+}
+.courses_list .row .row a:hover span {
+    background-color:#006A96;
+    color:#FFF;
+}
+.course_gray {
+    background-color:#dfdade;
+}
+.course_red {
+    background-color:#f9d8d8;
+}
+.course_pink {
+    background-color:#ffdfd8;
+}
+.course_yellow {
+    background-color:#ffedd8;
+}
+.course_green {
+    background-color:#d9eae9;
+}
+.page-node-99 .parallax_bg {
+    background-image:url(/sites/default/files/groups/envision/facility2.jpg);
+}
+
+
+
+
+/* People */
+.hover_text {
+    background-color:rgba(211,84,0,0.7);
+}
+.hover_text .ckeditor_bootstrap_modal {
+    height:100%;
+}
+.hover_text .ckeditor_bootstrap_modal .modal_trigger {
+    height:100%;
+}
+
+.page-node-106 .card-header {
+    padding:15px;
+}
+.page-node-106 .card-header h5 {
+    margin:0;
+    text-align:left;
+}
+
+
+
+
+
+/* Facilities */
+.page-node-100 .parallax_bg {
+    background-image:url(/sites/default/files/groups/envision/facility6.jpg);
+}
+.equipment_list {
+    background-color:#f2f2f2;
+    justify-content:space-evenly;
+}
+/*
+.equipment_list div[class^=col] {
+    flex:none;
+    width:auto;
+    max-width:none;
+}
+.equipment_list div[class^=col] .image_text {
+    background-color:#FFF;
+    margin-top:15px;
+    margin-bottom:15px;
+}
+*/
+.page-node-100 .image_text_background img {
+    height:170px;
+    width:auto;
+}
+/*
+.equipment_list {
+    font-weight:700;
+    background-color:#f2f2f2;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:space-evenly;
+}
+.equipment_list .row {
+    margin-bottom:1rem;
+}
+.equipment_container {
+    cursor:pointer;
+    position:relative;
+    overflow:hidden;
+    margin-top:15px;
+    margin-bottom:15px;
+}
+.equipment_container img {
+    height:180px;
+    width:auto;
+    transition:.3s all ease-in-out;
+}
+.equipment_container .equipment_name {
+    font-size:.75rem;
+    position:absolute;
+    width:100%;
+    height:100%;
+    padding:15px;
+    bottom:195px;
+    color:#FFF;
+    background-color:rgba(0,0,0,0.5);
+    transition:.3s all ease-in-out;
+}
+.equipment_container:hover img {
+    transform:scale(1.1);
+}
+.equipment_container:hover .equipment_name {
+    top:0;
+}
+*/
+
+
+
+
+
+/* News */
+.page-node-103 #sidebar_second {
+    margin-top:2rem;
+}
+
+
+/* Footer */
+.site-footer__bottom {
+    margin-top:0;
+}
+.site-footer__bottom .region-footer-fifth {
+    margin-top:0;
+}
+#block-envisionfooter {
+    width:100%;
+}
+
+footer {
+    border-top:1px solid #ccc;
+}
+.site-footer .content a, .site-footer .content a.is-active {
+    color:#49a5d3;
+}
+
+.envision_footer_logos a:first-child img {
+    max-width:250px;
+    height:auto;
+}
+.envision_footer_logos a:first-child {
+    margin-right:60px;
+}
+.envision_footer_logos a:last-child img {
+    max-width:200px;
+    height:auto;
+}
+footer p {
+    color:#999;
+}
+
+
+
+
+
+/* Elements */
+.view-frontpage {
+    display:none;
+}
